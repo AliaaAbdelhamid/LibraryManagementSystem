@@ -16,19 +16,17 @@ namespace LibraryManagementSystem.Contexts
 			try
 			{
 				dbContext.Database.Migrate();
-
 				bool hasAuthors = dbContext.Authors.Any();
 				bool hasCategories = dbContext.Categories.Any();
 				bool hasBooks = dbContext.Books.Any();
-
-				if (hasAuthors && hasCategories && hasBooks) return false;
+				bool hasMembers = dbContext.Members.Any();
+				if (hasAuthors && hasCategories && hasBooks && hasMembers) return false;
 
 				if (!hasAuthors)
 				{
 					var authors = JsonSeeder.LoadFromJson<Author>("Files/Authors.json");
 					dbContext.Authors.AddRange(authors);
 				}
-
 				if (!hasCategories)
 				{
 					var categories = JsonSeeder.LoadFromJson<Category>("Files/Categories.json");
@@ -40,7 +38,11 @@ namespace LibraryManagementSystem.Contexts
 					var books = JsonSeeder.LoadFromJson<Book>("Files/Books.json");
 					dbContext.Books.AddRange(books);
 				}
-
+				if (!hasMembers)
+				{
+					var members = JsonSeeder.LoadFromJson<Member>("Files/Members.json");
+					dbContext.Members.AddRange(members);
+				}
 				int rows = dbContext.SaveChanges();
 				return rows > 0;
 			}
