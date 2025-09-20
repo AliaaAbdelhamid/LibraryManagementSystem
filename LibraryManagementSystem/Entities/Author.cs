@@ -11,5 +11,6 @@ namespace LibraryManagementSystem.Entities
 		public string FirstName { get; set; } = null!;
 		public string LastName { get; set; } = null!;
 		public DateTime DateOfBirth { get; set; }
+		public ICollection<Book> AuthorBooks { get; set; } = new HashSet<Book>();
 	}
 }

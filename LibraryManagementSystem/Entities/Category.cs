@@ -10,5 +10,6 @@ namespace LibraryManagementSystem.Entities
 	{
 		public string Title { get; set; } = null!;
 		public string Description { get; set; } = null!;
+		public ICollection<Book> CategoryBooks { get; set; } = new HashSet<Book>();
 	}
 }
