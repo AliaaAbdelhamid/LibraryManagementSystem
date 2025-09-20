@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.Entities
 {
-	internal class Member: BaseEntity
+	internal class Member : BaseEntity
 	{
 		public string Name { get; set; } = null!;
 		public string Email { get; set; } = null!;
