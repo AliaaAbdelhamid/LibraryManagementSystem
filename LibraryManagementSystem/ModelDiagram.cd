@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibraryManagementSystem.Entities.Author">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\Author.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryManagementSystem.Entities.BaseEntity">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryManagementSystem.Entities.Book">
+    <Position X="1" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAIQAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryManagementSystem.Entities.Category">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <InheritanceLine Type="LibraryManagementSystem.Entities.BaseEntity" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="2.875" />
+        <Point X="9.5" Y="2.875" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryManagementSystem.Entities.Fine">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEBAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Fine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryManagementSystem.Entities.Loan">
+    <Position X="6.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Loan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryManagementSystem.Entities.Member">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEACIAAAAAAAAAQAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Member.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LibraryManagementSystem.Entities.Enums.FineStatus">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Entities\Enums\FineStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibraryManagementSystem.Entities.Enums.LoanStatus">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAhAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enums\LoanStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibraryManagementSystem.Entities.Enums.MemberStatus">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enums\MemberStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
