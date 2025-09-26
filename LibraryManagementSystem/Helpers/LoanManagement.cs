@@ -22,13 +22,14 @@ namespace LibraryManagementSystem.Helpers
 				var Book = dbContext.Books.Find(BookId);
 				if (Book is null || Book.AvailableCopies == 0) return false;
 				var Loan = new Loan();
-
 				dbContext.Loans.Add(Loan);
+			
 				var memberLoan = new MemberLoans()
 				{
 					Loan = Loan, MemberId = MemberId, BookId = BookId,
 					DueDate = DateTime.Now.AddDays(BorrowDays)
 				};
+
 				dbContext.MemberLoans.Add(memberLoan);
 				Book.AvailableCopies -= 1;
 				dbContext.SaveChanges();
@@ -48,12 +49,10 @@ namespace LibraryManagementSystem.Helpers
 				var memberLoan = dbContext.MemberLoans
 										  .Include(ml => ml.Loan)
 										  .Include(ml => ml.Book)
-										  .Include(ml => ml.Member)
 										  .FirstOrDefault(ml => ml.MemberId == memberId && ml.BookId == bookId && ml.ReturnDate == null);
 				if (memberLoan is null) return false;
 				
 				var Book = memberLoan.Book;
-				var Member = memberLoan.Member;
 				var Loan = memberLoan.Loan;
 				memberLoan.ReturnDate = DateTime.Now;
 				Book.AvailableCopies += 1;
@@ -64,7 +63,8 @@ namespace LibraryManagementSystem.Helpers
 					decimal dailyFine = 0.1M * Book.Price;
 					var Fine = new Fine() { Amount = overdueDays * dailyFine, Loan = Loan };
 					dbContext.Fines.Add(Fine);
-					Member.Status = MemberStatus.Suspended;
+					dbContext.Entry(memberLoan).Reference(X => X.Member).Load();
+					memberLoan.Member.Status = MemberStatus.Suspended;
 					Loan.Status = LoanStatus.Overdue;
 				}
 				else
